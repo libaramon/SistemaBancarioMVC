@@ -1,0 +1,23 @@
+using Microsoft.AspNetCore.Mvc;
+using SistemaBancarioMVC.Models;
+
+namespace SistemaBancarioMVC.Controllers
+{
+    public class ClienteController : Controller
+    {
+        public IActionResult Index()
+        {
+            var clientes = new List<Cliente>()
+            {
+                new Cliente
+                {
+                    Id = 1,
+                    Nombre = "Juan",
+                    Saldo = 5000
+                }
+            };
+
+            return View(clientes);
+        }
+    }
+}
