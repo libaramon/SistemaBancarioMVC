@@ -1,0 +1,55 @@
+using Microsoft.AspNetCore.Mvc;
+using SistemaBancarioMVC.Models;
+
+namespace SistemaBancarioMVC.Controllers
+{
+    public class CuentaController : Controller
+    {
+        // Simulación de una cuenta
+        private static Cuenta cuenta = new Cuenta()
+        {
+            NumeroCuenta = "123456"
+        };
+
+        // Mostrar información
+        public IActionResult Index()
+        {
+            return View(cuenta);
+        }
+
+        // Mostrar formulario depósito
+        public IActionResult Depositar()
+        {
+            return View();
+        }
+
+        // Procesar depósito
+        [HttpPost]
+        public IActionResult Depositar(double monto)
+        {
+            cuenta.Depositar(monto);
+            return RedirectToAction("Index");
+        }
+
+        // Mostrar formulario retiro
+        public IActionResult Retirar()
+        {
+            return View();
+        }
+
+        // Procesar retiro
+        [HttpPost]
+        public IActionResult Retirar(double monto)
+        {
+            bool resultado = cuenta.Retirar(monto);
+
+            if (!resultado)
+            {
+                ViewBag.Error = "Saldo insuficiente o monto inválido";
+                return View();
+            }
+
+            return RedirectToAction("Index");
+        }
+    }
+}
