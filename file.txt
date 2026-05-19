@@ -1,0 +1,26 @@
+namespace SistemaBancarioMVC.Models
+{
+    public class Cuenta
+    {
+        public string NumeroCuenta { get; set; }
+
+        public double Saldo { get; private set; }
+
+        public void Depositar(double monto)
+        {
+            if (monto > 0)
+            {
+                Saldo += monto;
+            }
+        }
+
+        public bool Retirar(double monto)
+        {
+            if (monto <= 0 || monto > Saldo)
+                return false;
+
+            Saldo -= monto;
+            return true;
+        }
+    }
+}
