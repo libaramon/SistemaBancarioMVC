@@ -1,0 +1,29 @@
+SistemaBancarioMVC
+│
+├── Controllers
+│   ├── ClienteController.cs
+│   └── CuentaController.cs
+│
+├── Models
+│   ├── Cliente.cs
+│   └── Cuenta.cs
+│
+├── Views
+│   ├── Cliente
+│   │   └── Index.cshtml
+│   │
+│   └── Cuenta
+│       ├── Index.cshtml
+│       ├── Depositar.cshtml
+│       └── Retirar.cshtml
+│
+├── Data
+│   └── AppDbContext.cs
+│
+├── wwwroot
+│   ├── css
+│   ├── js
+│   └── images
+│
+├── appsettings.json
+└── Program.cs

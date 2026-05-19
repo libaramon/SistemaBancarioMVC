@@ -1,0 +1,34 @@
+@model List<SistemaBancarioMVC.Models.Cliente>
+
+@{
+    ViewData["Title"] = "Clientes";
+}
+
+<h1>Lista de Clientes</h1>
+
+<hr />
+
+<table class="table table-bordered">
+
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Saldo</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var cliente in Model)
+        {
+            <tr>
+                <td>@cliente.Id</td>
+                <td>@cliente.Nombre</td>
+                <td>$ @cliente.Saldo</td>
+            </tr>
+        }
+
+    </tbody>
+
+</table>

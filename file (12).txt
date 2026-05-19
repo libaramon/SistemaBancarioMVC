@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+    "Conexion": "Server=.;Database=SistemaBancarioDB;Trusted_Connection=True;TrustServerCertificate=True"
+  }
+}

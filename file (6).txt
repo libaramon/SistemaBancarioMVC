@@ -1,0 +1,29 @@
+@model SistemaBancarioMVC.Models.Cuenta
+
+@{
+    ViewData["Title"] = "Cuenta Bancaria";
+}
+
+<h1>Cuenta Bancaria</h1>
+
+<hr />
+
+<p>
+    <strong>Número de Cuenta:</strong>
+    @Model.NumeroCuenta
+</p>
+
+<p>
+    <strong>Saldo:</strong>
+    $ @Model.Saldo
+</p>
+
+<hr />
+
+<a asp-action="Depositar" class="btn btn-success">
+    Depositar
+</a>
+
+<a asp-action="Retirar" class="btn btn-danger">
+    Retirar
+</a>
